@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+
+<body>
+	<header>   
+    <h2>Schedule<b class="cambio">-Soft</b></h2>
+  	<nav>
+      <ul>
+          <li><a href="#">Crear Cuenta</a></li>
+          <li><a href="#">Home</a></li>
+      </ul>
+  	</nav> 
+  	</header>
+		<div class="raiz">
+		{% with messages = get_flashed_messages()  %}{% if messages %}{% for message in messages %}<div id="message2">
+        <div id="mensaje_flash2">{{message}}</div>
+        <div id="icon2"><a href="javascript:void(0)" id="xx"
+            onclick="document.getElementById('mensaje_flash2').style.display='none';document.getElementById('xx').style.display='none';document.getElementById('icon').style.display='none';"
+            class="mensaje_flash2">X</a></div>
+      </div>{% endfor %}{% endif %}{% endwith %}
+		<div class="regis2">
+			<form class="formulario" action="/validarlogin" method="POST">
+				<h1>Iniciar Sesion</h1>
+				<div class="contenedor">
+
+					<div class="inputcontenedor">
+					<i class="fas fa-user icon"></i>
+					<input type="text" name="nombre_usuario" placeholder="Nombre Usuario" required maxlength="50"
+					pattern="[^@^^/()'\x22]+">
+					</div>
+
+					<div class="inputcontenedor">
+						<i class="fas fa-key icon"></i>
+						<input type="password" name="contrasena" placeholder="Contraseña" required maxlength="50"
+						pattern="[A-Za-z0-9_-]{8,12}">
+					</div>
+
+					<input type="submit" value="Registrar" name="" class="button" required maxlength="50">
+
+					<p>¿Olvidaste tu Contraseña?<a href="{{url_for('cambiar')}}" class="link"> Recuperar Contraseña</a></p>
+					<p>¿Ya tienes Cuenta?<a href="{{url_for('registrar')}}" class="link"> Registrarse</a></p>
+
+
+				</div>
+				
+			</form>
+		
+
+	</div>
+	<div class="clear"></div>
+
+<footer class="pie">
+	Schedule Company .Copyright &copy; 2020
+</footer>
+
+				
+</body>
+</html>
