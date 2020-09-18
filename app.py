@@ -29,7 +29,7 @@ def validarlogin():
 
                 if nombre_usuario == usuario and contrasena == password:
                         contador = 1
-                        break
+B                        break
 
         if contador == 1:
                 print ("Login correcto")
@@ -42,3 +42,8 @@ def validarlogin():
 
         conexion.close()
         return render_template('index.html')
+
+
+@app.route('/cambio')
+def cambiar_contrasena():
+        return render_template("cambio.html")
